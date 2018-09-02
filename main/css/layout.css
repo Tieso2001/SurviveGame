@@ -37,3 +37,7 @@ body {
     background-color: darkgrey;
     cursor: pointer;
 }
+
+#investigationObjects {
+    display: none;
+}

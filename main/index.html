@@ -8,12 +8,18 @@
     <link rel="stylesheet" type="text/css" href="css/layout.css">
 
     <script src="../game/world/time.js"></script>
+    <script src="../game/systems/save.js"></script>
+    <script src="../game/systems/investigate.js"></script>
+    <script src="../game/world/world.js"></script>
 </head>
-<body onLoad="updateAllTime()">
+<body onLoad="loadGame(), updateAllTime()">
 
 <div class="box1 margin-none">
     <span class="font1">
         Survive
+    </span>
+    <span class="font2 click" onClick="saveGame()">
+        Save
     </span>
 </div>
 
@@ -170,12 +176,18 @@
         Actions
     </span>
     <span class="font2">
-        <div class="click">
+        <div class="click" onClick="startInvestigate()">
             Investigate Area
         </div>
         <div class="click">
             Explore
         </div>
+    </span>
+</div>
+
+<div class="box2">
+    <span class="font1 click">
+        Current: <span id="current"></span>
     </span>
 </div>
 
