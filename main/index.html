@@ -2,9 +2,182 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Survive</title>
+
+    <link rel="stylesheet" type="text/css" href="css/fonts.css">
+    <link rel="stylesheet" type="text/css" href="css/layout.css">
+
+    <script src="../game/world/time.js"></script>
 </head>
-<body>
+<body onLoad="updateAllTime()">
+
+<div class="box1 margin-none">
+    <span class="font1">
+        Survive
+    </span>
+</div>
+
+<div class="box2">
+    <span class="font1 click">
+        Area
+    </span>
+    <span class="font2">
+        <table>
+            <tr>
+                <td>Date:</td>
+                <td>Y: <span id="time-year"></span> | D: <span id="time-day"></span></td>
+            </tr>
+            <tr>
+                <td>Season:</td>
+                <td><span id="time-season"></span></td>
+            </tr>
+            <tr>
+                <td>Time:</td>
+                <td><span id="time-hour"></span>:<span id="time-minute"></span> (<span id="time-daypart"></span>)</td>
+            </tr>
+            <tr>
+                <td>Biome:</td>
+                <td>Forest</td>
+            </tr>
+            <tr>
+                <td>Humidity:</td>
+                <td>100%</td>
+            </tr>
+            <tr>
+                <td>Weather:</td>
+                <td>Clear</td>
+            </tr>
+            <tr>
+                <td>Temperature: &nbsp </td>
+                <td> 20.0 *C</td>
+            </tr>
+        </table>
+    </span>
+</div>
+
+<div class="box2">
+    <span class="font1 click">
+        Player
+    </span>
+    <span class="font2">
+        <table>
+            <tr>
+                <td>Health:</td>
+                <td>100%</td>
+            </tr>
+            <tr>
+                <td>Food:</td>
+                <td>100%</td>
+            </tr>
+            <tr>
+                <td>Hydration:</td>
+                <td>100%</td>
+            </tr>
+            <tr>
+                <td>Energy:</td>
+                <td>100%</td>
+            </tr>
+            <tr>
+                <td>Weight:</td>
+                <td>Normal</td>
+            </tr>
+            <tr>
+                <td>Strength:</td>
+                <td>100%</td>
+            </tr>
+            <tr>
+                <td>Speed:</td>
+                <td>100%</td>
+            </tr>
+            <tr>
+                <td>Stealth:</td>
+                <td>100%</td>
+            </tr>
+            <tr>
+                <td>Intelligence: &nbsp </td>
+                <td>100%</td>
+            </tr>
+        </table>
+    </span>
+</div>
+
+<div class="box2">
+    <span class="font1 click">
+        Equipment
+    </span>
+    <span class="font2">
+        <table>
+            <tr>
+                <td>Head:</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Body:</td>
+                <td>Cotton Shirt (100%)</td>
+            </tr>
+            <tr>
+                <td>Back:</td>
+                <td>Nylon Backpack S. (100%) (0/25)</td>
+            </tr>
+            <tr>
+                <td>D. Hand:</td>
+                <td></td>
+            </tr>
+              <tr>
+                <td>N.D. Hand:  &nbsp </td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Legs:</td>
+                <td>Cotton Pants (100%) (0/4)</td>
+            </tr>
+            <tr>
+                <td>Feet:</td>
+                <td>Leather Shoes (100%)</td>
+            </tr>
+        </table>
+    </span>
+</div>
+
+<div class="box2">
+    <span class="font1 click">
+        Inventory
+    </span>
+    <span class="font2">
+        <table>
+            <tr>
+                <td>D. Hand:</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>N.D. Hand:</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Nylon Backpack S. (100%) (0/25):</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Cotton Pants (100%) (0/4):</td>
+                <td></td>
+            </tr>
+        </table>
+    </span>
+</div>
+
+<div class="box2">
+    <span class="font1 click">
+        Actions
+    </span>
+    <span class="font2">
+        <div class="click">
+            Investigate Area
+        </div>
+        <div class="click">
+            Explore
+        </div>
+    </span>
+</div>
 
 </body>
 </html>

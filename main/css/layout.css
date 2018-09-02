@@ -1,0 +1,39 @@
+body {
+    margin: 0;
+}
+
+.box1 {
+    display: block;
+    border: solid 2px black;
+    padding: 5px;
+}
+
+.box2 {
+    display: block;
+    width: max-content;
+    border: solid 2px black;
+    padding: 5px;
+    float: left;
+    margin-top: -2px;
+    margin-right: -2px;
+}
+
+.click {
+    background-color: white;
+    cursor: default;
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none; /* Non-prefixed version, currently supported by Chrome and Opera */
+}
+
+.click:hover {
+    background-color: lightgrey;
+    cursor: pointer;
+}
+
+.click:active {
+    background-color: darkgrey;
+    cursor: pointer;
+}
