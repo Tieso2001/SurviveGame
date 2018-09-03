@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <title>Survive</title>
 
-    <link rel="stylesheet" type="text/css" href="css/fonts.css">
-    <link rel="stylesheet" type="text/css" href="css/layout.css">
+    <link rel="stylesheet" type="text/css" href="main/css/fonts.css">
+    <link rel="stylesheet" type="text/css" href="main/css/layout.css">
 
-    <script src="../game/world/time.js"></script>
-    <script src="../game/systems/save.js"></script>
-    <script src="../game/systems/investigate.js"></script>
-    <script src="../game/world/world.js"></script>
+    <script src="game/world/time.js"></script>
+    <script src="game/systems/save.js"></script>
+    <script src="game/systems/investigate.js"></script>
+    <script src="game/world/world.js"></script>
 </head>
 <body onLoad="loadGame(), updateAllTime()">
 
@@ -24,8 +24,8 @@
 </div>
 
 <div class="box2">
-    <span class="font1 click">
-        Area
+    <span class="font1">
+        World
     </span>
     <span class="font2">
         <table>
@@ -61,6 +61,7 @@
     </span>
 </div>
 
+<!--
 <div class="box2">
     <span class="font1 click">
         Player
@@ -170,25 +171,34 @@
         </table>
     </span>
 </div>
+-->
 
-<div class="box2">
-    <span class="font1 click">
-        Actions
-    </span>
-    <span class="font2">
-        <div class="click" onClick="startInvestigate()">
-            Investigate Area
-        </div>
-        <div class="click">
-            Explore
-        </div>
-    </span>
-</div>
+<div class="box2 font2">
 
-<div class="box2">
-    <span class="font1 click">
-        Current: <span id="current"></span>
-    </span>
+    <div id="text" class="bold">Choose an action to perform:</div>
+
+    <table id="investigation">
+
+        <tr id="startInvestigation" class="click" onClick="startAreaInvestigation()">
+            <td>Investigate Area</td>
+        </tr>
+
+            <tr id="quick" class="click hidden" onClick="chooseInvestigationType('quick')">
+                <td>Quick (30s)</td>
+            </tr>
+            <tr id="regular" class="click hidden" onClick="chooseInvestigationType('regular')">
+                <td>Regular (1m)</td>
+            </tr>
+            <tr id="thorough" class="click hidden" onClick="chooseInvestigationType('thorough')">
+                <td>Thorough (2m)</td>
+            </tr>
+
+        <tr id="timer" class="hidden">
+            <td><span id="timer-left"></span> seconds left</td>
+        </tr>
+
+    </table>
+
 </div>
 
 </body>

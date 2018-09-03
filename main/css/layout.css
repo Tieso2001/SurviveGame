@@ -38,6 +38,10 @@ body {
     cursor: pointer;
 }
 
-#investigationObjects {
+.hidden {
     display: none;
+}
+
+#investigation {
+    display: block;
 }
