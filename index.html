@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <title>Survive</title>
 
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' />
+
     <link rel="stylesheet" type="text/css" href="main/css/fonts.css">
     <link rel="stylesheet" type="text/css" href="main/css/layout.css">
 
@@ -195,6 +197,10 @@
 
         <tr id="timer" class="hidden">
             <td><span id="timer-left"></span> seconds left</td>
+        </tr>
+
+        <tr id="cancel" class="fontRed click hidden" onClick="cancelInvestigation()">
+            <td>Cancel Investigation</td>
         </tr>
 
     </table>

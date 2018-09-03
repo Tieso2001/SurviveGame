@@ -8,26 +8,26 @@ var time = {
 };
 
 function increaseTime() {
-    time.minute = time.minute + 1;
+    time.minute++;
 
     if (time.minute == 60) {
         time.minute = 0;
-        time.hour = time.hour + 1;
+        time.hour++;
     }
 
     if (time.hour == 24) {
         time.hour = 0;
-        time.day = time.day + 1;
+        time.day++;
     }
 
     if (time.day > 28) {
         time.day = 1;
-        time.season = time.season + 1;
+        time.season++;
     }
 
     if (time.season == 5) {
         time.season = 1;
-        time.year = time.year + 1;
+        time.year++;
     }
 
     updateAllTime();

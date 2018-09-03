@@ -10,6 +10,10 @@
     color: grey;
 }
 
+.fontRed {
+    color: red;
+}
+
 .bold {
     font-weight: bold;
 }
