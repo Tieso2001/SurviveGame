@@ -8,39 +8,6 @@ var investigation = {
     }
 };
 
-var resultList = {
-    forest: {
-        rock: {
-            rarity: 1,
-            type: 'pickupable'
-        }
-    },
-    desert: {
-
-    },
-    jungle: {
-
-    },
-    tundra: {
-
-    },
-    swamp: {
-
-    },
-    river: {
-
-    },
-    ocean: {
-
-    },
-    savanna: {
-
-    },
-    mountain: {
-
-    }
-};
-
 function startAreaInvestigation() {
     document.getElementById('startInvestigation').style.display = 'none';
 
