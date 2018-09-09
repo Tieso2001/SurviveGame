@@ -9,10 +9,16 @@
     <link rel="stylesheet" type="text/css" href="main/css/fonts.css">
     <link rel="stylesheet" type="text/css" href="main/css/layout.css">
 
-    <script src="game/world/time.js"></script>
-    <script src="game/systems/save.js"></script>
+    <script src="game/items/resources.js"></script>
+
     <script src="game/systems/investigate.js"></script>
+    <script src="game/systems/save.js"></script>
+
+    <script src="game/world/biomes.js"></script>
+    <script src="game/world/time.js"></script>
     <script src="game/world/world.js"></script>
+
+    <script src="main/functions.js"></script>
 </head>
 <body onLoad="loadGame(), updateAllTime()">
 
@@ -172,35 +178,13 @@
 </div>
 -->
 
-<div class="box2 font2">
+<div id="actions" class="box2 font2">
 
     <div id="text" class="bold">Choose an action to perform:</div>
 
-    <table id="investigation">
-
-        <tr id="startInvestigation" class="click" onClick="startAreaInvestigation()">
-            <td>Investigate Area</td>
-        </tr>
-
-            <tr id="quick" class="click hidden" onClick="chooseInvestigationType('quick')">
-                <td>Quick (30s)</td>
-            </tr>
-            <tr id="regular" class="click hidden" onClick="chooseInvestigationType('regular')">
-                <td>Regular (1m)</td>
-            </tr>
-            <tr id="thorough" class="click hidden" onClick="chooseInvestigationType('thorough')">
-                <td>Thorough (2m)</td>
-            </tr>
-
-        <tr id="timer" class="hidden">
-            <td><span id="timer-left"></span> seconds left</td>
-        </tr>
-
-        <tr id="cancel" class="fontRed click hidden" onClick="cancelInvestigation()">
-            <td>Cancel Investigation</td>
-        </tr>
-
-    </table>
+        <div id="startInvestigate" class="click" onClick="startInvestigate()">
+            Investigate Area
+        </div>
 
 </div>
 

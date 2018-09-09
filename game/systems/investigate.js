@@ -1,83 +1,109 @@
-var investigation = {
+var investigate = {
     timer: 0,
     active: false,
     modifier: {
         quick: 0.25,
         regular: 1,
         thorough: 4
-    }
+    },
+    options: 0
 };
 
-function startAreaInvestigation() {
-    document.getElementById('startInvestigation').style.display = 'none';
+function startInvestigate() {
+    // Hide 'Start Investigation' button
+    document.getElementById('startInvestigate').style.display = 'none';
 
-    document.getElementById('text').innerHTML = 'Choose the type of area investigation:';
-    document.getElementById('quick').style.display = 'block';
-    document.getElementById('regular').style.display = 'block';
-    document.getElementById('thorough').style.display = 'block';
-    document.getElementById('cancel').style.display = 'block';
+    // Create a list of resources
+    createOptions();
+
+    // Create 'Cancel Investigation' button
+    createCancelInvestigate();
 }
 
-function chooseInvestigationType(type) {
-    if (type == 'quick') {
-        investigation.timer = 30;
-        document.getElementById('text').innerHTML = 'Quick Investigation:';
-    }
-    else if (type == 'regular') {
-        investigation.timer = 60;
-        document.getElementById('text').innerHTML = 'Regular Investigation:';
-    }
-    else if (type == 'thorough') {
-        investigation.timer = 120;
-        document.getElementById('text').innerHTML = 'Thorough Investigation:';
-    }
+function cancelInvestigate() {
+    // Un-hide 'Start Investigation' button
+    document.getElementById('startInvestigate').style.display = 'block';
 
-    investigation.active = true;
+    // Remove the list with resources
+    removeOptions();
 
-    document.getElementById('quick').style.display = 'none';
-    document.getElementById('regular').style.display = 'none';
-    document.getElementById('thorough').style.display = 'none';
-
-    document.getElementById('timer').style.display = 'block';
-    document.getElementById('timer-left').innerHTML = investigation.timer;
+    // Remove 'Cancel Investigation' button
+    removeCancelInvestigate();
 }
 
-function finishAreaInvestigation() {
-    investigation.active = false;
-    calculateResults();
+function createCancelInvestigate() {
+    // Create the div
+    var divCancel = document.createElement('div');
+
+    // Assign id to div
+    divCancel.id = 'cancelInvestigate';
+
+    // Assign classes to div
+    divCancel.classList.add('fontRed');
+    divCancel.classList.add('click');
+
+    // Add a function to div
+    divCancel.onclick = function() {cancelInvestigate()};
+
+    // Add text to div
+    var divCancelText = document.createTextNode('Cancel Investigation');
+    divCancel.appendChild(divCancelText);
+
+    // Place div into actions box
+    var actionsBox = document.getElementById('actions');
+    actionsBox.appendChild(divCancel);
 }
 
-function cancelInvestigation() {
-    investigation.timer = 0;
-    investigation.active = false;
-
-    document.getElementById('startInvestigation').style.display = 'block';
-    document.getElementById('text').innerHTML = 'Choose an action to perform:';
-
-    document.getElementById('quick').style.display = 'none';
-    document.getElementById('regular').style.display = 'none';
-    document.getElementById('thorough').style.display = 'none';
-
-    document.getElementById('timer').style.display = 'none';
-
-    document.getElementById('cancel').style.display = 'none';
+function removeCancelInvestigate() {
+    document.getElementById('cancelInvestigate').remove();
 }
 
-function countdownTimer() {
-    investigation.timer--;
-    document.getElementById('timer-left').innerHTML = investigation.timer;
+function createOptions() {
+    // For each item in the item list
+    for (var x in resources) {
+        // If biome value is equal to current biome
+        if (resources[x].biome == biome) {
+            // Define the amount of the resource
+            var amount = numberBetween(resources[x].min, resources[x].max);
 
-    if (investigation.timer == 0) {
-        finishAreaInvestigation();
+            // Add 1 to amount of options
+            investigate.options++;
+
+            // Create a div
+            var divOption = document.createElement('div');
+
+            // Assign id to div
+            divOption.id = 'option';
+
+            // Assign class to div;
+            divOption.classList.add('click');
+
+            // Add a function to div
+            divOption.onclick = function() {clickResource(x, amount)};
+
+            // Add text to div
+            var divText = document.createTextNode(amount + 'x ' + resources[x].name);
+            divOption.appendChild(divText);
+
+            // Place div into actions box
+            var actionsBox = document.getElementById('actions');
+            actionsBox.appendChild(divOption);
+        }
     }
 }
 
-window.setInterval(function() {
-    if (investigation.active == true) {
-        countdownTimer();
+function clickResource(resource, amount) {
+    window.alert(resource);
+    window.alert(amount);
+    cancelInvestigate();
+}
+
+function removeOptions() {
+    // Skips loop if amount of options = 0
+    if (investigate.options > 0) {
+        // Remove options 'amount of options' times
+        for (investigate.options; investigate.options > 0; investigate.options--) {
+            document.getElementById('option').remove();
+        }
     }
-}, 1000);
-
-function calculateResults() {
-
 }
