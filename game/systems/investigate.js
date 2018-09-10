@@ -60,11 +60,12 @@ function removeCancelInvestigate() {
 
 function createOptions() {
     // For each item in the item list
-    for (var x in resources) {
+    for (var i in resources) {
+		var resource = resources[i];
         // If biome value is equal to current biome
-        if (resources[x].biome == biome) {
+        if (resource.biome == biome) {
             // Define the amount of the resource
-            var amount = numberBetween(resources[x].min, resources[x].max);
+            resource.amount = numberBetween(resource.min, resource.max);
 
             // Add 1 to amount of options
             investigate.options++;
@@ -79,10 +80,10 @@ function createOptions() {
             divOption.classList.add('click');
 
             // Add a function to div
-            divOption.onclick = function() {clickResource(x, amount)};
+            divOption.onclick = createResourceOnClick(resource);
 
             // Add text to div
-            var divText = document.createTextNode(amount + 'x ' + resources[x].name);
+            var divText = document.createTextNode(resource.amount + 'x ' + resource.name);
             divOption.appendChild(divText);
 
             // Place div into actions box
@@ -92,9 +93,12 @@ function createOptions() {
     }
 }
 
+var createResourceOnClick = function(resource) {
+  return function() { clickResource(resource) };
+}
+
 function clickResource(resource, amount) {
-    window.alert(resource);
-    window.alert(amount);
+    window.alert(resource.name + " : " + resource.amount);
     cancelInvestigate();
 }
 
