@@ -65,7 +65,7 @@ function createOptions() {
         // If biome value is equal to current biome
         if (resource.biome == biome) {
             // Define the amount of the resource
-            resource.amount = numberBetween(resource.min, resource.max);
+            resource.amount = random(resource.min, resource.max);
 
             // Add 1 to amount of options
             investigate.options++;
