@@ -3,7 +3,7 @@ var resources = {
         name: 'Rock',
         biome: 'Forest',
         chance: 0.6,
-        min: 1,
+        min: 2,
         max: 5,
 		amount: 0
     },
@@ -17,7 +17,5 @@ var resources = {
     }
 };
 
-function numberBetween(min, max) {
-    return (Math.floor(Math.random() * max) + min);
-}
+
 
